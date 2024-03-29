@@ -1,0 +1,2 @@
+C:\GithubResource\QGBackEndWork\Week_2\Calculators\x64\Debug\Calculators.exe
+C:\GithubResource\QGBackEndWorkBIG\Week_2\Calculators\x64\Debug\Calculators.exe

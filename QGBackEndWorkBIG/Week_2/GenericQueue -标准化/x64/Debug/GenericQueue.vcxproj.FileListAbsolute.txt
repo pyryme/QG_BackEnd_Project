@@ -1,0 +1,2 @@
+C:\GithubResource\QGBackEndWork\Week_2\GenericQueue\x64\Debug\GenericQueue.exe
+C:\GithubResource\QGBackEndWorkBIG\Week_2\GenericQueue\x64\Debug\GenericQueue.exe

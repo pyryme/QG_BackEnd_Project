@@ -1,0 +1,14 @@
+﻿  main.c
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(14,9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(25,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(44,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(54,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(64,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(81,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(98,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(108,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\main.c(118,17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  oneADT.c
+  twoADT.c
+  正在生成代码...
+  LinkedList_VS.vcxproj -> C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\x64\Debug\LinkedList_VS.exe
