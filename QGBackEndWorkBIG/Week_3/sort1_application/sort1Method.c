@@ -34,8 +34,8 @@ void sortColors(int* nums, int numsSize) {
 
 
 
-#include <stdio.h>
 
+////////////////这个方法思路就是快速排序的分类，通过判断pivot的左右的数字数量来判断第几个大小
 // 快速排序中的划分函数
 int partition(int* arr, int low, int high) {
     int pivot = arr[high];
