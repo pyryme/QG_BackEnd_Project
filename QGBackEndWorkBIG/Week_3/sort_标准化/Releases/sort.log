@@ -1,0 +1,17 @@
+﻿  dataMethod.c
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(11,11): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(5,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(27,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(41,13): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(101,11): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\dataMethod.c(204,15): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  main.c
+  sortMethod.c
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(12,15): warning C4018: “<”: 有符号/无符号不匹配
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(102,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(116,11): warning C4098: “countsort”:“void”函数返回值
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(122,16): warning C4018: “<”: 有符号/无符号不匹配
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(139,11): warning C4098: “_radixsort”:“void”函数返回值
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\sortMethod.c(143,16): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+  sort.vcxproj -> C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\x64\Debug\sort.exe

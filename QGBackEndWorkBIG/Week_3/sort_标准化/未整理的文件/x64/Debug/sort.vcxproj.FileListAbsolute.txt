@@ -1,0 +1,2 @@
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort2\x64\Debug\sort.exe
+C:\GithubResource\QGBackEndWorkBIG\Week_3\sort\x64\Debug\sort.exe
