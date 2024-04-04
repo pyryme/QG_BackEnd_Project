@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--配置axios 和 jQuery。axios还要再webapp包下js包下进行存放js文件-->
+<script src="js/axios-0.18.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<button id="GETButton">点击发送GET请求</button>
+<div id="dataContainer">
+    <!-- 这里将显示从服务器返回的GET数据 -->
+</div>
+
+
+<button id="POSTButton">点击发送POST请求</button>
+<div id="resultContainer">
+    <!-- 这里将显示从服务器返回的POST数据 -->
+</div>
+
+<form>
+
+</form>
+<script>
+    //这里发送ajax请求，
+    // 方法一：用axios进行改良
+    // axios.get({
+    //     method:"get",
+    //     url:"http://localhost:8080/AJAX_Demo1/AJAXDemo1?username=zhangsan"
+    // }).then(function (resp){
+    //     alert(resp.data)
+    // })
+    //
+    //
+    // axios.post({
+    //     method:"post",
+    //     url: "http://localhost:8080/AJAX_Demo1/AJAXDemo1",
+    //     data:"username=zhangsan"
+    // }).then(function (resp){
+    //
+    // })
+
+
+    // 方法二：用jQuery的方法
+    $(document).ready(function(){
+        // 当页面加载完成后执行
+        $("#GETButton").click(function() {
+            $.ajax({
+                url: "http://localhost:8080/AJAX_Demo1/AJAXDemo1",//这个写的是servlet的地址
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    // 如果请求成功，处理JSON响应
+                    $("#dataContainer").html(
+                        "<p>Name: " + data.name + "</p>" +
+                        "<p>Age: " + data.age + "</p>" +
+                        "<p>Addr: " + data.addr + "</p>"
+                    );
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Error: " + error);
+                }
+            });
+        });
+
+        $("#POSTButton").click(function() {
+            // 当点击按钮时执行
+
+        // 创建要发送的数据对象,模拟数据就没有必要了
+        var requestData = {
+            name: "lisi",
+            age: "22"
+        };
+
+        // 发送POST请求
+        $.ajax({
+            url: "http://localhost:8080/AJAX_Demo1/AJAXDemo1", // 修改为你的服务器端接收POST请求的URL
+            type: "POST",
+            contentType: "application/json", // 指定发送的数据类型为JSON
+            data: JSON.stringify(requestData), // 将数据对象转换为JSON字符串
+            success: function(response) {
+                // 如果请求成功，处理服务器返回的响应
+                $("#resultContainer").html(
+                    "<p>Name: " + response.name + "</p>" +
+                    "<p>Age: " + response.age + "</p>" +
+                    "<p>Addr: " + response.addr + "</p>"
+                );
+            },
+            error: function(xhr, status, error) {
+                // 如果请求失败，处理错误
+                $("#resultContainer").text("请求失败：" + error);
+            }
+        });
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>

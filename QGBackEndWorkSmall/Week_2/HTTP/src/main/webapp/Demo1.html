@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="sendRequestBtn">发送请求</button>
+
+<script src="js/axios-0.18.0.js"></script>
+
+
+<script>
+  //////////////////////////////方法1，用传统的方法
+/////////////////////////////////方法2，用ajax
+  //////////////////////////////方法3，用axios，就是封装的ajax
+  //这里写请求参数，后面就不用每一个都写了
+  document.getElementById('sendRequestBtn').addEventListener('click', function() {
+    const url = 'https://myword.moity-soeoe.xyz/login';
+    const credentials = {
+      username: 'qgstudio',
+      password: 'qgstudio'
+    };
+
+
+    // POST
+    axios.post(url, credentials)
+            .then(response => {
+              console.log('POST request:', response.data);
+            })
+            .catch(error => {
+              console.error('POST request error:', error.response.statusText);
+            });
+
+    // GET
+    axios.get(url)
+            .then(response => {
+              console.log('GET request:', response.data);
+            })
+            .catch(error => {
+              console.error('GET request error:', error.response.statusText);
+            });
+
+    //PUT
+    axios.put(url, credentials)
+            .then(response => {
+              console.log('PUT request:', response.data);
+            })
+            .catch(error => {
+              console.error('PUT request error:', error.response.statusText);
+            });
+
+    //DELETE
+    axios.delete(url, { data: credentials })
+            .then(response => {
+              console.log('DELETE request:', response.data);
+            })
+            .catch(error => {
+              console.error('DELETE request error:', error.response.statusText);
+            });
+
+    //HEAD
+    axios.head(url)
+            .then(response => {
+              console.log('HEAD request:', response.data);
+            })
+            .catch(error => {
+              console.error('HEAD request error:', error.response.statusText);
+            });
+
+    //CONNECT
+    axios.request({
+      method: 'CONNECT',
+      url: url,
+      proxy: {
+        host: 'localhost',
+        port: 8080//不用3000
+      }
+    })
+            .then(response => {
+              console.log('CONNECT request:', response.data);
+            })
+            .catch(error => {
+              console.error('CONNECT request error:', error.response.statusText);
+            });
+
+    //OPTIONS
+    axios.options(url)
+            .then(response => {
+              console.log('OPTIONS request:', response.data);
+            })
+            .catch(error => {
+              console.error('OPTIONS request error:', error.response.statusText);
+            });
+
+    //TRACE
+    axios.request({
+      method: 'TRACE',
+      url: url,
+      proxy: {
+        host: 'localhost',
+        port: 8080
+      }
+    })
+            .then(response => {
+              console.log('TRACE request:', response.data);
+            })
+            .catch(error => {
+              console.error('TRACE request error:', error.response.statusText);
+            });
+  });
+</script>
+</body>
+</html>

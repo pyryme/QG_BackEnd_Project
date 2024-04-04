@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>AJAX_Demo1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+<!--这个是mybatis的-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.5.5</version>
+    </dependency>
+
+<!--    这个是mysql的,这个版本和视频不一样，视频5.1.46-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.28</version>
+    </dependency>
+
+<!--    这个是单元测试-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+
+<!--    以下3个是javaweb视频教mybatis的时候给的-->
+    <!-- 添加slf4j日志api -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.20</version>
+    </dependency>
+    <!-- 添加logback-classic依赖 -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <!-- 添加logback-core依赖 -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+
+
+<!--    以下的Jackson是GPT为了用mapper.writeValueAsString(dataObject)引入的。
+但是后面不用了，用Alibaba的库来实现json和java对象的转换-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.13.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.1</version>
+    </dependency>
+
+    <!--   用Alibaba的库来实现json和java对象的转换-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.62</version>
+    </dependency>
+  </dependencies>
+
+
+  <!--  这个是tomcat的（封装了http的传输 请求和回应 的代码）-->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+
+
+      <!--      这个东西是系统自己生成的（因为要用@Override，点了一下就生成了），后来跟我说maven run的时候不支持6的，我就把source target改为7了-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+
+
+
+
+
+</project>
