@@ -1,0 +1,5 @@
+﻿  main.c
+  TreeADT.c
+C:\GithubResource\QGBackEndWorkBIG\Week_4\Tree_标准化\TreeADT.c(273,17): warning C4133: “函数”: 从“Queue *”到“Stack *”的类型不兼容
+  正在生成代码...
+  Tree.vcxproj -> C:\GithubResource\QGBackEndWorkBIG\Week_4\Tree_标准化\x64\Debug\Tree.exe

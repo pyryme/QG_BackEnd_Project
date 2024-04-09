@@ -7,12 +7,12 @@ import java.sql.Statement;
 
 public class JDBCUtils {
 
-    //封装1：这个是进行JDBC连接的
+    //内部封装1：这个是进行JDBC连接的
     private Connection getConnection(String url, String username, String password) throws Exception {
         return DriverManager.getConnection(url, username, password);
     }
 
-    //封装2：这个是进行dml操作的，将封装1包含
+    //封装1：这个是进行dml操作的，将封装1包含
     public void executeDML(String sql, String url, String username, String password) {
         try  {
             //1进行连接，同时定义conn接受函数的返回值。
@@ -42,7 +42,7 @@ public class JDBCUtils {
         }
     }
 
-    // 封装3：执行 DDL 操作
+    // 封装2：执行 DDL 操作
     public void executeDDL(String sql, String url, String username, String password) {
         try  {
             //1进行连接，同时定义conn接受函数的返回值。

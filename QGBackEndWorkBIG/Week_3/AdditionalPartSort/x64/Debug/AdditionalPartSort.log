@@ -1,0 +1,6 @@
+﻿  BubbleSort.c
+  main.c
+  QuickSort.c
+C:\GithubResource\QGBackEndWorkBIG\Week_3\AdditionalPartSort\QuickSort.c(72,11): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+  AdditionalPartSort.vcxproj -> C:\GithubResource\QGBackEndWorkBIG\Week_3\AdditionalPartSort\x64\Debug\AdditionalPartSort.exe

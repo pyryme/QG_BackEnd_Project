@@ -1,0 +1,2 @@
+C:\GithubResource\QGBackEndWork\Week_2\AdditionalPartSort\x64\Debug\AdditionalPartSort.exe
+C:\GithubResource\QGBackEndWorkBIG\Week_3\AdditionalPartSort\x64\Debug\AdditionalPartSort.exe

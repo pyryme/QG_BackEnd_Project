@@ -77,8 +77,8 @@ char Precede(char t, char ch)//比较优先级的大小
 		break; }
 	case ')':
 	{
-		if (t != '(')
-			return '=';
+		//if (t != '(')
+		return '=';
 		break; }
 	case 'o':
 	{
@@ -135,7 +135,7 @@ int logicMain()
 	while (ch != 'o' || GetTop(OPCH) != 'o')//将表达式没有扫描完成的OPTR的栈顶元素不为“#”
 	{
 		if (!ln(ch))
-		{	
+		{	//------1------是数字不是符号执行这里
 			if (time == 1) {//第一次手动了，这里就跳过
 				ch = getchar();
 				time++;
@@ -145,65 +145,66 @@ int logicMain()
 			//ch不是运算符则进OPND栈并读取下一个字符 
 			Push(&OPND, ch);
 			ch = getchar();
-			//scanf("%c", &ch);
 			}
 			
 		}
-		else {
-			/*if (time == 1) {//第一次手动了，这里就跳过
-				ch = getchar();
-				continue;
-			}
-			else {*/
+		else {//---------1----------是符号执行这里
 				switch (Precede(GetTop(OPCH), ch))
-				{	//<就压进去，>就弹出		
-				case'<':
+	{			
+				
+				case'<'://<就压进去，>就弹出	
 				{
 					Push(&OPCH, ch);//当前字符ch压入OPTR栈，读入下一个字符
 					//scanf("%c", &ch);
 					ch = getchar();
 					break; }
-				case'>'://这个就是弹出的操作！！！！！！
+
+				case'>'://这个就是弹出的操作
 				{
-					if (ch != ')' && ch != 'o') {//!!!!!!!!!!!!!!!!
-						Pop(&OPCH, &theta);//弹出OPTR栈顶的运算符
-						Pop(&OPND, &a);//弹出OPND栈顶的两个运算数
+					if ( ch != 'o') {//-------2--------这里在没有)能处理。+-*/前是*/，
+						Pop(&OPCH, &theta);
+						Pop(&OPND, &a);
 						Pop(&OPND, &b);
 						a1 = a - '0';//将字符转化为十进制 
 						b1 = b - '0';
 						Push(&OPND, Operate(b1, theta, a1) + '0');//因为OPND里的数据为字符型，则再将计算结果转化为字符型
 						Push(&OPCH, ch);
-					}//这里自己新加的！！！！！！！！
-	//这里好像有问题，比如我的就+并没有压入栈？？？？？？？？（现在先看看不压入的结果）
-	//懂了，好像是+-要继续进栈，但是如果是）就不用进栈，所以我在这个case里面加上一个if来分流   
-					else {//!!!!!!这里是)就不用压进去了
-						Pop(&OPCH, &theta);//弹出OPTR栈顶的运算符
-						Pop(&OPND, &a);//弹出OPND栈顶的两个运算数
+						ch=getchar();
+					}  
+					else {//-----------2------------这里是o,所以不再进行getchar()进行更新,并且不将最后的o压进去
+						Pop(&OPCH, &theta);
+						Pop(&OPND, &a);
 						Pop(&OPND, &b);
-						a1 = a - '0';//将字符转化为十进制 
+						a1 = a - '0'; 
 						b1 = b - '0';
-						Push(&OPND, Operate(b1, theta, a1) + '0');//因为OPND里的数据为字符型，则再将计算结果转化为字符型
+						Push(&OPND, Operate(b1, theta, a1) + '0');
 					}
 					break;
 				}
 
-				case'='://这个是专属的)，！！！！！！！！！！！
+				case'='://-----------2---------------这个是专属的)
 				{
-					char temp;
-					Pop(&OPND, &a);
-					Pop(&OPND, &b);
-					Pop(&OPCH, &theta);
-					a1 = a - '0';
-					b1 = b - '0';
-					Push(&OPND, Operate(b1, theta, a1) + '0');
-					Pop(&OPCH, &temp);//弹出OPTR栈顶的“（”，读入下一个字符ch
-					ch = getchar();
-					//scanf("%c", &ch);
-					break; }
+					if (GetTop(OPCH) == '(') {//---------3---------这个是)情况下轮到(了
+						Pop(&OPCH, &theta);//这里把(弹出来
+						ch = getchar();
+					
+					}
+					else{//----------3-----------这是)情况下还没有轮到(
+						char temp='0';
+						Pop(&OPND, &a);
+						Pop(&OPND, &b);
+						Pop(&OPCH, &theta);
+						a1 = a - '0';
+						b1 = b - '0';
+						Push(&OPND, Operate(b1, theta, a1) + '0');
+					break;
+					}
 				}
+					}
+					
 			//}
-		}
-		time++;
+	}
+		time++;//这个就当作测试的一个标准吧，其实没什么用，只是记录循环了多少次
 
 	}
 	printf("计算结果为：%d", GetTop(OPND) - '0');//因为OPND里的数据为字符型，则再将其转化为整型			    

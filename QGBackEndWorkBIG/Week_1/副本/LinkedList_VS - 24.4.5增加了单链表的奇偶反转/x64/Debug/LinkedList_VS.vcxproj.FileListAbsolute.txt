@@ -1,0 +1,2 @@
+C:\GithubResource\QGBackEndWork\Week_1\LinkedList_VS\x64\Debug\LinkedList_VS.exe
+C:\GithubResource\QGBackEndWorkBIG\Week_1\LinkedList_VS\x64\Debug\LinkedList_VS.exe
